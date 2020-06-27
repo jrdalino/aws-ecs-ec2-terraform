@@ -1,4 +1,4 @@
-# Terraform module to provision an AWS ECS Cluster w/ EC2 Launch Type
+# Terraform module to provision an AWS ECS Cluster using EC2 Launch Type
 
 ## This creates the following resources:
 - ECS Cluster
@@ -33,7 +33,7 @@ $ terraform apply
 ## (In progress) Terraform Module Usage
 Include this repository as a module in your existing terraform code:
 ```
-module "eks" {
+module "ecs" {
   source = "git::https://github.com/jrdalino/aws-ecs-terraform.git?ref=master"
 }
 ```
