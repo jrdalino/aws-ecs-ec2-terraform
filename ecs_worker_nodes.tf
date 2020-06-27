@@ -16,12 +16,12 @@ data "aws_ami" "ecs" {
 
 # Launch Configuration
 resource "aws_launch_configuration" "ecs_config_launch_config_spot" {
-  name_prefix                 = "${var.aws_ecs_cluster_name}_ecs_cluster_spot"
+  name_prefix                 = "${var.aws_ecs_cluster_name}_spot"
   image_id                    = data.aws_ami.ecs.id # Use the latest ECS optimized AMI
   instance_type               = var.instance_type_spot # e.g. t3a.medium
 
   # Allow the EC2 instances to access AWS resources on your behalf, using this instance profile and the permissions defined there
-  # iam_instance_profile        = aws_iam_instance_profile.ec2_iam_instance_profile.arn
+  # iam_instance_profile       = aws_iam_instance_profile.ec2_iam_instance_profile.arn
 
   # If you want to SSH into the instance and manage it directly:
   # 1. Make sure this key exists in the AWS EC2 dashboard
@@ -43,7 +43,7 @@ EOF
 
   enable_monitoring           = true
 
-  # e.g. “0.013”, which represents how much you are willing to pay (per hour) most for every instance
+  # e.g. “0.0142”, which represents how much you are willing to pay (per hour) most for every instance
   # See the EC2 Spot Pricing page for more information:
   # https://aws.amazon.com/ec2/spot/pricing/
   spot_price                  = var.spot_bid_price
@@ -71,7 +71,7 @@ resource "aws_autoscaling_group" "ecs_cluster_spot" {
     create_before_destroy = true
   }
 
-  vpc_zone_identifier = ["subnet-020c0bd9d909350b7", "subnet-0d3e240802a6511a5"]
+  vpc_zone_identifier = [var.aws_subnet_id_1, var.aws_subnet_id_2]
 
   tags = [
     {

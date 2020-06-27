@@ -2,7 +2,7 @@
 resource "aws_security_group" "sg_for_ec2_instances" {
   name_prefix = "${var.aws_ecs_cluster_name}_sg_for_ec2_instances_"
   description = "Security group for EC2 instances within the cluster"
-  vpc_id      = "vpc-043631a22a451851e"
+  vpc_id      = var.aws_vpc_name
   lifecycle {
     create_before_destroy = true
   }

@@ -9,6 +9,22 @@ variable "aws_account" {
   description = "Used AWS Account."    
 }
 
+# Network
+variable "aws_vpc_name" {
+  type        = string
+  description = "(Required) The name of the VPC"
+}
+
+variable "aws_subnet_id_1" {
+  type        = string
+  description = "(Required) The id of subnet 1"
+}
+
+variable "aws_subnet_id_2" {
+  type        = string
+  description = "(Required) The id of subnet 2"
+}
+
 # ECS Cluster
 variable "aws_ecs_cluster_name" {
   type        = string
