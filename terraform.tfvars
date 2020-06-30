@@ -3,9 +3,9 @@ aws_region  = "ap-southeast-1"
 aws_account = "707538076348"
 
 # Network
-aws_vpc_id      = "vpc-043631a22a451851e"
-aws_subnet_id_1 = "subnet-020c0bd9d909350b7"
-aws_subnet_id_2 = "subnet-0d3e240802a6511a5"
+aws_vpc_id      = "vpc-05e7516e4e1a850d8"
+aws_subnet_id_1 = "subnet-0b1a6e4805e063664"
+aws_subnet_id_2 = "subnet-0de3a8400dcbed8cb"
 
 # ECS Cluster
 aws_ecs_cluster_name = "myproject-ecs"
