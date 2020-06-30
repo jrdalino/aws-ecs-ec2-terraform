@@ -33,8 +33,8 @@ $ terraform apply
 ## (In progress) Terraform Module Usage
 Include this repository as a module in your existing terraform code:
 ```
-module "ecs" {
-  source = "git::https://github.com/jrdalino/aws-ecs-terraform.git?ref=master"
+module "ecs-ec2" {
+  source = "git::https://github.com/jrdalino/aws-ecs-ec2-terraform.git?ref=master"
 }
 ```
 

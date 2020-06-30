@@ -10,9 +10,9 @@ variable "aws_account" {
 }
 
 # Network
-variable "aws_vpc_name" {
+variable "aws_vpc_id" {
   type        = string
-  description = "(Required) The name of the VPC"
+  description = "(Required) The id of the VPC"
 }
 
 variable "aws_subnet_id_1" {
@@ -24,6 +24,8 @@ variable "aws_subnet_id_2" {
   type        = string
   description = "(Required) The id of subnet 2"
 }
+
+# Security Groups
 
 # ECS Cluster
 variable "aws_ecs_cluster_name" {
@@ -53,4 +55,25 @@ variable "min_spot_instances" {
 variable "max_spot_instances" {
   default     = "5"
   description = "The maximum EC2 spot instances that can be launched during period of high traffic"
+}
+
+# IAM Roles
+variable "ecs_service_role_name" {
+  type        = string
+  description = "ECS Service Role Name"
+}
+
+variable "ecs_service_role_policy_name" {
+  type        = string
+  description = "ECS Service Role Policy Name"
+}
+
+variable "ecs_task_role_name" {
+  type        = string
+  description = "ECS Task Role Name"
+}
+
+variable "ecs_task_role_policy_name" {
+  type        = string
+  description = "ECS Task Role Policy Name"
 }
