@@ -33,6 +33,7 @@ variable "aws_ecs_cluster_name" {
   description = "(Required) The name of the cluster (up to 255 letters, numbers, hyphens, and underscores)"
 }
 
+# ECS Worker Nodes
 variable "ssh_key_name" {
   description = "SSH key to use to enter and manage the EC2 instances within the cluster. Optional"
   default     = ""
