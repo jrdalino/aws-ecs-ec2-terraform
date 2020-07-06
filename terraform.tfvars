@@ -8,10 +8,10 @@ aws_subnet_id_1 = "subnet-00d5890384743053f"
 aws_subnet_id_2 = "subnet-04cbdc2a21daa4c7f"
 
 # ECS Cluster
-aws_ecs_cluster_name = "myproject-ecs"
+aws_ecs_cluster_name = "demo-ecs"
 
 # IAM Roles
-ecs_service_role_name        = "myproject-ecs-service-role"
-ecs_service_role_policy_name = "myproject-ecs-service-role-policy"
-ecs_task_role_name           = "myproject-ecs-task-role"
-ecs_task_role_policy_name    = "myproject-ecs-task-role-policy"
+ecs_service_role_name        = "demo-ecs-service-role"
+ecs_service_role_policy_name = "demo-ecs-service-role-policy"
+ecs_task_role_name           = "demo-ecs-task-role"
+ecs_task_role_policy_name    = "demo-ecs-task-role-policy"
